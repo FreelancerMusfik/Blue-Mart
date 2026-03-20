@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueMart | Premium Online Shopping</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="images/fav.png" type="image/x-icon">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Css connection link -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div id="toast-container"></div>
+    <!-- Top Bar -->
+    <div class="top-nav">
+        <div>Welcome to BlueMart! Free Shipping on orders over $100</div>
+        <div>Track Order | Store Finder | Customer Support</div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fas fa-shopping-basket"></i> Blue<span>Mart</span>
+        </a>
+
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search for products, brands...">
+            <button id="btn-search"><a href="#productGrid"><i class="fas fa-search"></a></i></button>
+        </div>
+
+        <div class="nav-actions">
+            <div class="nav-item">
+                <i class="far fa-user"></i>
+                <span id="text-nav-header">Sign In</span>
+            </div>
+            <div class="nav-item">
+                <i class="far fa-heart"></i>
+                <span class="wish-count">0</span>
+                <span id="text-nav-header">Wishlist</span>
+            </div>
+            <div class="nav-item cart" style="position: relative;">
+                <i id="icon-nav" class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+                <span id="text-nav-header">My Cart</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Big Winter Sale!</h1>
+            <p>Get up to 70% off on all Premium Gadgets & Fashion items.</p>
+            <a href="#" class="hero-btn">Explore Deals</a>
+        </div>
+        <div class="hero-image">
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Top Categories</h3>
+            <ul>
+                <li><a href="#" class="category-link"><i class="fas fa-laptop"></i> Electronics</a></li>
+                <li><a href="#" class="category-link"><i class="fas fa-tshirt"></i> Men's Fashion</a></li>
+                <li><a href="#" class="category-link"><i class="fas fa-shoe-prints"></i> Footwear</a></li>
+                <li><a href="#" class="category-link"><i class="fas fa-mobile-alt"></i> Mobile & Tablets</a></li>
+                <li><a href="#" class="category-link"><i class="fas fa-couch"></i> Home & Living</a></li>
+                <li><a href="#" class="category-link"><i class="fas fa-headphones"></i> Accessories</a></li>
+            </ul>
+
+            <h3 style="margin-top: 30px;">Price Filter</h3>
+            <input type="range" style="width: 100%;">
+            <div style="display: flex; justify-content: space-between; font-size: 12px; margin-top: 5px;">
+                <span>$0</span><span>$5000</span>
+            </div>
+        </aside>
+
+        <!-- Product Listing Area -->
+        <main>
+            <div class="section-header">
+                <h2>Trending Products</h2>
+                <select id="priceFilter" style="padding: 5px; border-radius: 5px; border-color: var(--border); outline: none;">
+                    <option>Sort by: Popularity</option>
+                    <option value="lowToHigh">Price: Low to High</option>
+                    <option value="highToLow">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div class="products-grid" id="productGrid">
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div id="cart-popup" class="cart-sidebar">
+            <div class="cart-header">
+                <span style="font-weight: bold; font-size: 1.2rem;">My Shopping Cart</span>
+                <button id="close-cart" class="close-btn">Close &times;</button>
+            </div>
+
+            <div class="cart-body" id="cart-items">
+                <p style="text-align: center; color: #666; margin-top: 20px;">Cart is empty!</p>
+            </div>
+
+            <div class="cart-footer">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; color: black;">
+                    <b>Total:</b>
+                    <b id="total-price">$ <span id="Tp">0.00</span></b>
+                </div>
+                <button onclick="chackOut()" class="checkout-btn">Checkout Now</button>
+            </div>
+        </div>
+
+        <div id="cart-overlay" class="overlay"></div>
+
+
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>BlueMart</h4>
+                <p style="font-size: 13px; opacity: 0.7;">The best premium online shop for all your daily needs. Quality
+                    products, fast delivery.</p>
+                <div style="margin-top: 20px;">
+                    <i class="fab fa-facebook" style="margin-right: 15px;"></i>
+                    <i class="fab fa-instagram" style="margin-right: 15px;"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li>About Us</li>
+                    <li>Delivery Information</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li>Contact Us</li>
+                    <li>Returns</li>
+                    <li>Site Map</li>
+                    <li>Gift Certificates</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>My Account</h4>
+                <ul>
+                    <li>Order History</li>
+                    <li>Wishlist</li>
+                    <li>Newsletter</li>
+                    <li>Affiliate</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 BlueMart Ecommerce. All Rights Reserved. Designed for Professionals.
+        </div>
+    </footer>
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn2" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+
+    <div id="checkoutModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="checkout-container">
+                <div class="summary-side">
+                    <button class="close-modal" onclick="closePopup()" id="closeCheckout">&larr; Back to Cart</button>
+                    <h2>Order Summary</h2>
+                    <div id="checkoutItemsList" class="checkout-items-scroll">
+                    </div>
+                    <div class="coupon-section">
+                        <div class="input-group-row">
+                            <input type="text" id="couponInput" placeholder="কুপন কোড লিখুন (যেমন: SAVE10)">
+                            <button type="button" id="applyCouponBtn">Apply</button>
+                        </div>
+                        <p id="couponMsg"></p>
+                    </div>
+                    <div class="billing-details">
+                        <div class="bill-row"><span>Subtotal</span><span id="st">$0</span></div>
+                        <div class="bill-row"><span>Shipping</span><span>$10</span></div>
+                        <div class="bill-row total"><span>Total</span><span id="gt">$0</span></div>
+                    </div>
+                </div>
+
+                <div class="form-side">
+                    <h2>Shipping Info</h2>
+                    <form id="checkoutForm">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+880 1XXX-XXXXXX" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Delivery Address</label>
+                            <textarea rows="3" placeholder="House, Road, Area..." required></textarea>
+                        </div>
+                        <div class="payment-methods">
+                            <label>Payment Method</label>
+                            <div class="methods">
+                                <label class="radio-card">
+                                    <input type="radio" name="pay" checked>
+                                    <span class="radio-tile">Cash on Delivery</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="pay">
+                                    <span class="radio-tile">Bkash Payment</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="pay">
+                                    <span class="radio-tile">Nagad Payment</span>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="pay">
+                                    <span class="radio-tile">Rocket Payment</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="submit" class="confirm-btn">Confirm Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
+</body>
+
+</html>
