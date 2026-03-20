@@ -24,7 +24,6 @@ Blue Mart is a fully responsive, lightweight, and user-friendly e-commerce landi
 
 ## 📸 Screenshots
 
-*(You can add your project screenshots here after hosting)*
 ![alt text](<Project UI/Main-Page.png>)
 
 ## 🏁 How to Run
